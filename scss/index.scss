@@ -1,0 +1,69 @@
+@import 'mixins';
+
+// Everything
+* {
+    font-family: "Palatino Linotype" !important;
+}
+
+// Title
+#titleParent {
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:50px;
+    img {
+        width:25%;
+    }
+}
+
+// Table
+table {
+    margin-left: 3%;
+    margin-right: 3%;
+    width:calc(100% - 3% - 3%);
+
+    th, td {
+        border: 1px solid black;
+        padding:5px;
+        text-align:center;
+    }
+
+    // Header row
+    th {
+        background-color: lightgrey;
+    }
+
+    // Data rows
+    tr[ng-repeat] {
+        &:hover {
+            background-color: #DDFFDD;
+            cursor:pointer;
+        }
+    }
+
+    // The total cost of the shopping trip
+    #totalCost {
+        background-color: lightgreen;
+        font-weight: bolder;
+    }
+
+    // How much we've saved in total
+    #amountSaved {
+        background-color: lightseagreen;
+        font-weight: bolder;
+    }
+}
+
+// Button which adds new item
+#buttonParent {
+    text-align:center;
+    button {
+        margin-top:50px;
+        padding: 10px 40px 10px 40px;
+    }
+}
+
+// Error class
+.error {
+    background-color: red;
+    color:white;
+}

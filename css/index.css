@@ -1,0 +1,41 @@
+* {
+  font-family: "Palatino Linotype" !important; }
+
+#titleParent {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px; }
+  #titleParent img {
+    width: 25%; }
+
+table {
+  margin-left: 3%;
+  margin-right: 3%;
+  width: calc(100% - 3% - 3%); }
+  table th, table td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center; }
+  table th {
+    background-color: lightgrey; }
+  table tr[ng-repeat]:hover {
+    background-color: #DDFFDD;
+    cursor: pointer; }
+  table #totalCost {
+    background-color: lightgreen;
+    font-weight: bolder; }
+  table #amountSaved {
+    background-color: lightseagreen;
+    font-weight: bolder; }
+
+#buttonParent {
+  text-align: center; }
+  #buttonParent button {
+    margin-top: 50px;
+    padding: 10px 40px 10px 40px; }
+
+.error {
+  background-color: red;
+  color: white; }
+
+/*# sourceMappingURL=index.css.map */

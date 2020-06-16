@@ -1,0 +1,53 @@
+<!-- Modal -->
+<div id="addModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add an item</h4>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+
+                <!-- Item name -->
+                <label>Item name</label>
+                <input type="text" placeholder="Potatoes" name="itemName" class="form-control" ng-change="itemNameChanged('#addModal input[name=\'itemName\']', addItemName)" ng-model="addItemName" />
+                <p class="nameExistsMessage" style="margin-top:10px;margin-bottom:5px;display:none;">{{ nameExistsMessage }}</p>
+                <br/>
+
+                <!-- Quantity -->
+                <label>Quantity</label>
+                <input type="number" placeholder="2" name="quantity" class="form-control" />
+                <br/>
+
+                <!-- Original cost -->
+                <label>Original cost</label>
+                <input type="number" min="0.01" step="0.01" placeholder="2.00" name="originalCost" class="form-control"/>
+                <br/>
+
+                <!-- Rollback cost -->
+                <label>Rollback cost</label>
+                <input type="number" min="0.01" step="0.01" placeholder="1.20" name="rollbackCost" class="form-control"/>
+                <br/>
+
+                <!-- Notes -->
+                <label>Notes</label>
+                <input type="text" placeholder="2 for 1" name="notes" class="form-control"/>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="addItemClick()">Add</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div id="selectModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">What would you like to do with the following item?</h4>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">{{ selectedItemName }}</div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="showEditModal()">Edit</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteSelectedItem()">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

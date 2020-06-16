@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Angular Shopper</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Index css -->
+        <link rel="stylesheet" href="css/index.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Title -->
+        <div id="titleParent">
+            <img src="logo.png" />
+        </div>
+
+        <!-- App -->
+        <div ng-app="myApp" ng-controller="myCtrl">
+
+            <table>
+
+                <!-- Header -->
+                <tr>
+                    <th>Item name</th>
+                    <th>Quantity</th>
+                    <th>Original cost</th>
+                    <th>Rollback cost</th>
+                    <th>Total cost</th>
+                    <th>Amount saved</th>
+                    <th>Notes</th>
+                </tr>
+
+                <!-- Data -->
+                <tr ng-repeat="item in items" ng-click="itemClick(item)">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.originalcost | currency : "£" }}</td>
+                    <td>{{ item.rollbackcost | currency : "£" }}</td>
+                    <td>{{ item.rollbackcost * item.quantity | currency : "£" }}</td>
+                    <td>{{ (item.originalcost - item.rollbackcost) * item.quantity | currency : "£" }}</td>
+                    <td>{{ item.notes }}</td>
+                </tr>
+
+                <!-- Total -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="totalCost">{{ getTotalCost() | currency : "£" }}</td>
+                    <td id="amountSaved">{{ getTotalAmountSaved() | currency : "£" }}</td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+            <!-- Button to add a new item -->
+            <div id="buttonParent">
+                <button class="btn btn-default" data-toggle="modal" data-target="#addModal">Add new item</button>
+                <br/>
+                <button class="btn btn-danger" ng-click="clearAllClick()">Clear all</button>
+            </div>
+
+            <!-- Add modal -->
+            <div ng-include="'addmodal.html'"></div>
+
+            <!-- Select modal -->
+            <div ng-include="'selectmodal.html'"></div>
+
+            <!-- Edit modal -->
+            <div ng-include="'editmodal.html'"></div>
+
+            <!-- Delete modal -->
+            <div ng-include="'deletemodal.html'"></div>
+
+        </div>
+
+        <!-- Index javascript -->
+        <script src="js/index.js"></script>
+
+    </body>
+
+</html>
